@@ -15,11 +15,6 @@ import zilldy.com.github.cineminha.modelos.Titulo;
 import zilldy.com.github.cineminha.modelos.TituloOmdb;
 
 public class PrincipalComBusca {
-	/**
-	 * @param args
-	 * @throws IOException
-	 * @throws InterruptedException
-	 */
 	public static void main(String[] args) throws IOException, InterruptedException {
 		Scanner tc = new Scanner(System.in);
 		System.out.print("Digite o nome do filme para busca: ");
