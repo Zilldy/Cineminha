@@ -5,8 +5,6 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import zilldy.com.github.cineminha.modelos.Titulo;
 import zilldy.com.github.cineminha.modelos.TituloOmdb;
-import zilldy.com.github.cineminha.principal.PrincipalComBusca;
-
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URI;
