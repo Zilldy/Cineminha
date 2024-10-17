@@ -1,7 +1,6 @@
 package zilldy.com.github.cineminha.calculos;
 
 public class FiltroRecomendacao {
-    private String recomendacao;
 
     public void filtra(Classificavel classificavel) {
         if (classificavel.getClassificacao() >= 4) {

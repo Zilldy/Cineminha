@@ -14,8 +14,6 @@ public class PrincipalComBusca {
         Scanner tc = new Scanner(System.in);
         String buscaParam = "";
         List<Titulo> titulos = new ArrayList<>();
-        // controller api
-
 
         while (!buscaParam.equalsIgnoreCase("sair")) {
 
@@ -38,7 +36,6 @@ public class PrincipalComBusca {
                     ErroDeConversaoDeAnoException e) {
                 System.out.println(e.getMessage());
             }
-
         }
 
         System.out.println(titulos);
