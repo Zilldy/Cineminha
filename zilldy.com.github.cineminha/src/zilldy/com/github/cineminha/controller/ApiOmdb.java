@@ -5,7 +5,6 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import zilldy.com.github.cineminha.modelos.Titulo;
 import zilldy.com.github.cineminha.modelos.TituloOmdb;
-
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URI;
@@ -17,25 +16,21 @@ import java.util.List;
 
 public class ApiOmdb {
 
-    String busca = "";
-    String chave = "570fbd0f";
-    String endereco = "https://www.omdbapi.com/?t=" + busca.replace(" ", "+") + "&apikey=" + chave;
+    private String chave = "570fbd0f";
     Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).setPrettyPrinting().create();
     List<Titulo> titulos = new ArrayList<>();
 
-    public void buscaApi(String buscaParam) {
+    public void buscaApi(String buscaParam) throws IOException, InterruptedException {
+
+        String endereco = "https://www.omdbapi.com/?t=" + buscaParam.replace(" ", "+") + "&apikey=" + chave;
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder().uri(URI.create(endereco)).build();
-        HttpResponse<String> response = null;
-        try {
-            response = client.send(request, HttpResponse.BodyHandlers.ofString());
-        } catch (IOException | InterruptedException ex) {
-            throw new RuntimeException(ex);
-        }
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
         String json = response.body();
         TituloOmdb meuTituloOmdb = gson.fromJson(json, TituloOmdb.class);
         Titulo meuTitulo = new Titulo(meuTituloOmdb);
+
         titulos.add(meuTitulo);
 
         System.out.println("Título adicionado com sucesso!");
@@ -46,6 +41,5 @@ public class ApiOmdb {
         escrita.write(gson.toJson(titulos));
         escrita.close();
     }
-
 
 }

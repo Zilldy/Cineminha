@@ -8,12 +8,12 @@
     "DuracaoEmMinutos": 60
   },
   {
-    "Nome": "Dogville",
-    "AnoDeLancamento": 2003,
+    "Nome": "Top Gun",
+    "AnoDeLancamento": 1986,
     "IncluidoNoPlano": false,
     "SomaDasAvaliacoes": 0.0,
     "TotalDeAvaliacoes": 0,
-    "DuracaoEmMinutos": 17
+    "DuracaoEmMinutos": 10
   },
   {
     "Nome": "Juntos e Enrolados",
@@ -22,5 +22,29 @@
     "SomaDasAvaliacoes": 0.0,
     "TotalDeAvaliacoes": 0,
     "DuracaoEmMinutos": 94
+  },
+  {
+    "Nome": "The Godfather",
+    "AnoDeLancamento": 1972,
+    "IncluidoNoPlano": false,
+    "SomaDasAvaliacoes": 0.0,
+    "TotalDeAvaliacoes": 0,
+    "DuracaoEmMinutos": 17
+  },
+  {
+    "Nome": "Sar",
+    "AnoDeLancamento": 2016,
+    "IncluidoNoPlano": false,
+    "SomaDasAvaliacoes": 0.0,
+    "TotalDeAvaliacoes": 0,
+    "DuracaoEmMinutos": 38
+  },
+  {
+    "Nome": "Sar",
+    "AnoDeLancamento": 2016,
+    "IncluidoNoPlano": false,
+    "SomaDasAvaliacoes": 0.0,
+    "TotalDeAvaliacoes": 0,
+    "DuracaoEmMinutos": 38
   }
 ]

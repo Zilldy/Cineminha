@@ -1,16 +1,16 @@
-package zilldy.com.github.cineminha.principal;
+package zilldy.com.github.cineminha.controller;
 
-import zilldy.com.github.cineminha.controller.MenuPrincipalComBusca;
-
+import zilldy.com.github.cineminha.excecao.ErroDeConversaoDeAnoException;
 import java.io.IOException;
+import java.util.Scanner;
 
-public class PrincipalComBusca {
-<<<<<<< HEAD
-    public static void main(String[] args) throws IOException, InterruptedException {
-        Scanner tc = new Scanner(System.in);
-        String buscaParam = "";
-        List<Titulo> titulos = new ArrayList<>();
+public class MenuPrincipalComBusca {
 
+    Scanner tc = new Scanner(System.in);
+    String buscaParam = "";
+    ApiOmdb omdb = new ApiOmdb();
+
+    public void menuPrincipalComBusca() throws IOException {
         while (!buscaParam.equalsIgnoreCase("sair")) {
 
             System.out.print("Digite o nome do filme para busca: ");
@@ -21,7 +21,7 @@ public class PrincipalComBusca {
             }
 
             try {
-
+                omdb.buscaApi(buscaParam);
             } catch (NumberFormatException e) {
                 System.out.println("Aconteceu um erro: ");
                 System.out.println(e.getMessage());
@@ -31,18 +31,14 @@ public class PrincipalComBusca {
             } catch (
                     ErroDeConversaoDeAnoException e) {
                 System.out.println(e.getMessage());
+            } catch (IOException | InterruptedException e) {
+                throw new RuntimeException(e);
             }
+
         }
 
-        System.out.println(titulos);
+        omdb.escreveJSON();
 
         tc.close();
-=======
-    public static void main(String[] args) throws IOException {
-        MenuPrincipalComBusca busca = new MenuPrincipalComBusca();
-
-        busca.menuPrincipalComBusca();
-
->>>>>>> 10f6b085a58a9aa0af9fbbdb81a38a40368a8c5f
     }
 }
